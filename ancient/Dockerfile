@@ -1,7 +1,4 @@
-# note: UPSTREAM is replaced by STUPS CD pipeline
-
-FROM registry.opensource.zalan.do/stups/ubuntu:UPSTREAM
-MAINTAINER Zalando SE
+FROM registry.opensource.zalan.do/stups/ubuntu:16.04-38
 
 # snippet from https://github.com/nodejs/docker-node/blob/6778e14c0c1ae53cc413f77a94c21c7cf05f651f/0.12/wheezy/Dockerfile
 
@@ -20,7 +17,7 @@ RUN set -ex \
     gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; \
   done
 
-ENV NODE_VERSION 0.12.14
+ENV NODE_VERSION 4.2.1
 ENV NPM_VERSION 3.8.9
 
 RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.gz" \
